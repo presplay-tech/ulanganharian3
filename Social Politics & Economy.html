@@ -1,0 +1,422 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosial, Ekonomi, dan Politik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Mengatur semua elemen agar menggunakan box-sizing border-box untuk kontrol layout yang lebih mudah */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Pengaturan dasar tampilan untuk elemen body */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(Landing\ Page\ Background.jpg);            
+            color: #000000; /* Warna teks hitam */
+        }
+
+        /* Header dengan warna latar hitam dan teks putih */
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 1.5em 2em;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan di bawah header */
+        }
+
+        /* Blok untuk logo dan nama situs */
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        /* Pengaturan ukuran gambar logo */
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        /* Teks logo di sebelah gambar */
+        .logo-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Menu navigasi */
+        nav ul {
+            list-style-type: none; /* Menghilangkan bullet point */
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        /* Jarak antar item di menu navigasi */
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        /* Pengaturan tampilan link di navigasi */
+        nav ul li a {
+            color: white;
+            text-decoration: none; /* Menghilangkan garis bawah */
+            font-weight: 500;
+            transition: color 0.3s; /* Animasi perubahan warna */
+        }
+
+        /* Efek hover pada link di navigasi */
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Konten utama */
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Tampilan tiap section dengan latar putih dan bayangan */
+        section {
+            margin: 60px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Warna dan ukuran untuk judul dalam section */
+        h1 {
+            color: #000000;
+        }
+
+        /* Lingkaran negara untuk link negara */
+        .country-circles {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        /* Tampilan lingkaran gambar negara */
+        .country-circle {
+            width: 120px;
+            height: 120px;
+            overflow: hidden; /* Sembunyikan bagian gambar yang keluar lingkaran */
+            border-radius: 50%; /* Membentuk lingkaran */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            border: 3px solid black;
+        }
+
+        /* Gambar dalam lingkaran */
+        .country-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        /* Efek zoom saat hover di lingkaran negara */
+        .country-circle:hover {
+            transform: scale(1.05);
+        }
+
+        /* Slider gambar dengan posisi dan bayangan */
+        .image-slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gaya tiap slide gambar */
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* Slide aktif yang terlihat */
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Pengaturan gambar dalam slide */
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+        }
+
+        /* Tampilan caption dalam slider */
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            max-width: 90%;
+        }
+
+        /* Footer dengan latar belakang hitam dan teks putih */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan logo dan navigasi -->
+    <header>
+        <div class="logo">
+            <img src="Piece By Piece.png" alt="Logo">
+            <div class="logo-text">Bahasan Politik dan Ekonomi Ringan</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#economy">Economy</a></li>
+                <li><a href="#politics">Politics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main>
+
+        <!-- Slider Gambar dengan informasi penting -->
+
+        <div id="welcome-message" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: #000000; color: #ffffff; padding: 1em 2em; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); z-index: 1000;">
+            <p>Selamat datang di situs Bahasan Politik dan Ekonomi Ringan! Jelajahi berbagai topik menarik tentang isu sosial, ekonomi, dan politik dari seluruh dunia. Kami berharap informasi ini dapat menambah wawasan Anda!</p>
+            <button onclick="document.getElementById('welcome-message').style.display='none'" style="background-color: #ffcc00; color: #000; border: none; padding: 0.5em 1em; cursor: pointer; border-radius: 4px;">Tutup</button>
+        </div>
+        
+        <div class="image-slider">
+            <div class="slide active">
+                <img src="American Democratic Protest.png" alt="Kekerasan pada 6 Januari 2024 akibat kebohongan Trump">
+                <div class="caption">Kekerasan pada 6 Januari 2024 akibat kebohongan Trump</div>
+            </div>
+            <div class="slide">
+                <img src="Hamas Leader Killed Yahya Sinwar.png" alt="Pemimpin Hamas, Yahya Sinwar ditembak di kepala">
+                <div class="caption">Pemimpin Hamas, Yahya Sinwar ditembak di kepala</div>
+            </div>
+            <div class="slide">
+                <img src="North Korean Troops sent to Russia.png" alt="Tentara Korea Utara mengirim pasukan ke Rusia">
+                <div class="caption">Tentara Korea Utara mengirim pasukan ke Rusia</div>
+            </div>
+        </div>
+
+        <!-- Lingkaran Negara yang dapat diklik untuk menuju halaman masing-masing negara -->
+        <div class="country-circles">
+            <a href="usa.html" class="country-circle"><img src="American Flag.webp" alt="Bendera AS"></a>
+            <a href="china.html" class="country-circle"><img src="China Flag.png" alt="Bendera China"></a>
+            <a href="israel.html" class="country-circle"><img src="Israeli Flag.jpg" alt="Bendera Israel"></a>
+        </div>
+
+        <!-- Section tentang isu sosial -->
+        <section id="social">
+            <section id="social">
+                <h1>Social</h1>
+                <p>"Sosial" merujuk pada isu-isu, kebijakan, dan dinamika yang memengaruhi masyarakat secara keseluruhan, dengan fokus pada kesejahteraan komunitas, kesetaraan, dan interaksi antar kelompok sosial. Berikut adalah beberapa elemen penting dalam isu sosial:</p>
+                <h2>Key Areas of Social Issues</h2>
+                <ul>
+                    <li><strong>Social Policies:</strong> 
+                        <ul>
+                            <li>Kesehatan universal, seperti layanan kesehatan gratis atau subsidi kesehatan.</li>
+                            <li>Reformasi pendidikan, termasuk akses pendidikan gratis atau kurikulum yang inklusif.</li>
+                            <li>Perumahan terjangkau untuk meningkatkan standar hidup masyarakat miskin.</li>
+                        </ul>
+                        <em>Contoh:</em> Kebijakan kesejahteraan di negara-negara Skandinavia.
+                    </li>
+                    <li><strong>Justice and Equality:</strong> 
+                        <ul>
+                            <li>Keadilan gender, seperti kesetaraan gaji dan hak perempuan.</li>
+                            <li>Anti-diskriminasi berdasarkan ras, etnis, atau orientasi seksual.</li>
+                        </ul>
+                        <em>Contoh:</em> Gerakan Black Lives Matter, undang-undang kesetaraan pernikahan.
+                    </li>
+                    <li><strong>Economic-Social Nexus:</strong> 
+                        <ul>
+                            <li>Dampak ketimpangan pendapatan terhadap kohesi sosial.</li>
+                            <li>Mobilitas sosial melalui pendidikan dan pelatihan kerja.</li>
+                        </ul>
+                        <em>Contoh:</em> Program pengentasan kemiskinan di India (MGNREGA).
+                    </li>
+                    <li><strong>Community Engagement:</strong>
+                        <ul>
+                            <li>Sukarelawan dan aktivisme sosial untuk isu lokal atau global.</li>
+                            <li>Hak pilih sebagai bagian dari partisipasi sipil.</li>
+                        </ul>
+                        <em>Contoh:</em> Partisipasi warga dalam referendum Brexit.
+                    </li>
+                    <li><strong>Public Opinion and Movements:</strong>
+                        <ul>
+                            <li>Pengaruh media sosial dalam membentuk opini publik.</li>
+                            <li>Gerakan sosial seperti protes perubahan iklim atau hak buruh.</li>
+                        </ul>
+                        <em>Contoh:</em> Protes Fridays for Future untuk perubahan iklim.
+                    </li>
+                </ul>
+            </section>
+            
+
+        <!-- Section tentang isu ekonomi -->
+        <section id="economy">
+            <h1>Economy</h1>
+            <p>"Ekonomi" mempelajari bagaimana sumber daya—seperti uang, tenaga kerja, dan modal—dikelola, didistribusikan, dan dimanfaatkan untuk memenuhi kebutuhan masyarakat. Berikut adalah komponen utama dalam isu ekonomi:</p>
+            <h2>Key Areas of Economic Issues</h2>
+            <ul>
+                <li><strong>Economic Policies:</strong> 
+                    <ul>
+                        <li><em>Monetary Policy:</em> Kebijakan suku bunga dan uang beredar untuk mengontrol inflasi.</li>
+                        <li><em>Fiscal Policy:</em> Penggunaan pajak dan pengeluaran pemerintah untuk mendukung pertumbuhan ekonomi.</li>
+                    </ul>
+                    <em>Contoh:</em> Kebijakan stimulus ekonomi selama pandemi COVID-19.
+                </li>
+                <li><strong>Wealth Distribution:</strong> 
+                    <ul>
+                        <li>Ketimpangan pendapatan antara kaya dan miskin.</li>
+                        <li>Pajak progresif sebagai solusi untuk redistribusi kekayaan.</li>
+                    </ul>
+                    <em>Contoh:</em> Program redistribusi tanah di Brasil.
+                </li>
+                <li><strong>Development Economics:</strong> 
+                    <ul>
+                        <li>Pembangunan infrastruktur seperti jalan, sekolah, dan rumah sakit.</li>
+                        <li>Investasi sosial di negara berkembang untuk mengurangi kemiskinan.</li>
+                    </ul>
+                    <em>Contoh:</em> Inisiatif Belt and Road China.
+                </li>
+                <li><strong>Environmental Economics:</strong>
+                    <ul>
+                        <li>Pengelolaan sumber daya alam secara berkelanjutan.</li>
+                        <li>Kebijakan pengurangan emisi karbon dan energi terbarukan.</li>
+                    </ul>
+                    <em>Contoh:</em> Kesepakatan Paris untuk perubahan iklim.
+                </li>
+                <li><strong>Global Trade:</strong>
+                    <ul>
+                        <li>Perjanjian perdagangan bebas seperti NAFTA dan WTO.</li>
+                        <li>Dampak proteksionisme terhadap ekonomi global.</li>
+                    </ul>
+                    <em>Contoh:</em> Perang dagang AS-China.
+                </li>
+            </ul>
+        </section>
+        
+
+        <!-- Section tentang isu politik -->
+        <section id="politics">
+            <h1>Politics</h1>
+            <p>
+                "Politik" dalam konteks ini berkaitan dengan bagaimana kekuasaan dan kebijakan publik diatur dan digunakan untuk memengaruhi masyarakat. Fokus utamanya adalah pada keputusan dan proses yang berhubungan dengan kesejahteraan umum, hak-hak warga negara, dan kepentingan bersama. Beberapa aspek penting dari topik politik adalah:
+            </p>
+            <ul>
+                <li><strong>Kebijakan Publik:</strong> Keputusan yang dibuat oleh pemerintah untuk mengatur atau memecahkan masalah dalam masyarakat, seperti kesehatan, pendidikan, dan perumahan. Kebijakan publik ini sering kali mencerminkan kebutuhan dan aspirasi masyarakat.</li>
+                <li><strong>Demokrasi dan Keterlibatan Warga Negara:</strong> Mengacu pada sistem dan mekanisme di mana warga dapat terlibat dalam proses politik, seperti hak suara, kebebasan berpendapat, dan partisipasi dalam pembuatan keputusan publik.</li>
+                <li><strong>Hak Asasi dan Keadilan:</strong> Fokus pada perlindungan hak asasi manusia, anti-diskriminasi, dan upaya menciptakan keadilan sosial bagi semua anggota masyarakat, terlepas dari latar belakang mereka.</li>
+                <li><strong>Geopolitik dan Hubungan Internasional:</strong> Meliputi bagaimana hubungan antar negara—seperti kerjasama, persaingan, dan kebijakan luar negeri—mempengaruhi stabilitas politik dan ekonomi secara global.</li>
+            </ul>
+            <h2>Forms of Government</h2>
+            <p>Sistem pemerintahan mencerminkan bagaimana kekuasaan diorganisasi dan dijalankan. Berikut adalah bentuk-bentuk pemerintahan utama:</p>
+            <ul>
+                <li><strong>Democracy:</strong> 
+                    <ul>
+                        <li><em>Direct Democracy:</em> Rakyat langsung membuat keputusan.</li>
+                        <li><em>Representative Democracy:</em> Rakyat memilih perwakilan untuk membuat keputusan atas nama mereka.</li>
+                    </ul>
+                    <em>Contoh:</em> Amerika Serikat, Jerman.
+                </li>
+                <li><strong>Republic:</strong> Kepala negara dipilih, bukan seorang raja. 
+                    <em>Contoh:</em> Perancis, Brasil.
+                </li>
+                <li><strong>Monarchy:</strong>
+                    <ul>
+                        <li><em>Absolute Monarchy:</em> Raja memiliki kekuasaan penuh (e.g., Arab Saudi).</li>
+                        <li><em>Constitutional Monarchy:</em> Kekuasaan raja dibatasi oleh hukum atau konstitusi (e.g., Inggris, Jepang).</li>
+                    </ul>
+                </li>
+                <li><strong>Authoritarianism:</strong> Kekuasaan terpusat pada satu pemimpin atau kelompok kecil.
+                    <em>Contoh:</em> Korea Utara.
+                </li>
+                <li><strong>Totalitarianism:</strong> Pemerintah mengontrol semua aspek kehidupan masyarakat.
+                    <em>Contoh:</em> Nazi Jerman, Uni Soviet era Stalin.
+                </li>
+                <li><strong>Communism:</strong> Semua sumber daya dimiliki bersama dan diatur negara.
+                    <em>Contoh:</em> Kuba, Korea Utara.
+                </li>
+                <li><strong>Socialism:</strong> Sistem yang mengatur distribusi kekayaan agar lebih adil.
+                    <em>Contoh:</em> Swedia (sosial demokrasi).
+                </li>
+                <li><strong>Federalism:</strong> Kekuasaan dibagi antara pemerintah pusat dan daerah.
+                    <em>Contoh:</em> Amerika Serikat, Kanada.
+                </li>
+                <li><strong>Confederation:</strong> Serikat negara-negara independen dengan kekuasaan pusat terbatas.
+                    <em>Contoh:</em> Uni Eropa (sebagian).
+                </li>
+                <li><strong>Oligarchy:</strong> Pemerintahan oleh sekelompok kecil elit.
+                    <em>Contoh:</em> Sparta kuno.
+                </li>
+                <li><strong>Theocracy:</strong> Pemerintahan berdasarkan hukum agama.
+                    <em>Contoh:</em> Iran, Vatikan.
+                </li>
+                <li><strong>Anarchy:</strong> Ketiadaan pemerintahan resmi.
+                    <em>Contoh:</em> Situasi sementara di wilayah konflik.
+                </li>
+            </ul>
+        </section>
+
+</main>
+
+    <!-- Footer dengan informasi hak cipta -->
+    <footer>
+        <p>&copy; 2024 Komunitas Politik Geografi Canisius College</p>
+    </footer>
+
+    <!-- Script JavaScript untuk slider gambar otomatis -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        // Fungsi untuk menampilkan slide tertentu berdasarkan indeks
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        // Fungsi untuk menuju ke slide berikutnya
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Interval untuk mengganti slide setiap 5 detik
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

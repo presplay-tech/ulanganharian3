@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA - Social, Economy, and Politics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg'); /* Background flag image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Overlay to darken the background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+            z-index: -1; /* Places the overlay behind the content */
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 1.5em 2em;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .back-button {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background-color: #e6b800;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+            z-index: 1;
+        }
+
+        section {
+            margin: 60px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Piece By Piece.png" alt="Logo">
+            <div class="logo-text">USA - Bahasan Politik dan Ekonomi Ringan</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#economy">Economy</a></li>
+                <li><a href="#politics">Politics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="Social Politics & Economy.html" class="back-button">Back to Home</a>
+
+        <section id="social">
+            <h1>Social Issues in the USA</h1>
+            <p>
+                Amerika Serikat dikenal sebagai negara multikultural dengan masyarakat yang beragam secara ras, etnis, agama, dan budaya. Isu sosial di Amerika sering kali mencerminkan kompleksitas ini:
+                <ul>
+                    <li><strong>Healthcare:</strong> Sistem kesehatan di Amerika, yang sebagian besar berbasis asuransi, sering menjadi perdebatan. Isu utamanya adalah mahalnya biaya kesehatan dan akses terbatas bagi masyarakat yang kurang mampu.</li>
+                    <li><strong>Racial Equality:</strong> Diskriminasi berbasis ras tetap menjadi masalah, meskipun telah ada kemajuan sejak gerakan hak-hak sipil pada 1960-an. Protes besar-besaran seperti *Black Lives Matter* menyoroti pentingnya reformasi sosial.</li>
+                    <li><strong>Education:</strong> Sistem pendidikan Amerika memiliki disparitas yang signifikan. Sekolah di daerah kaya sering kali memiliki sumber daya yang jauh lebih baik dibandingkan dengan daerah yang kurang berkembang.</li>
+                    <li><strong>Immigration:</strong> Sebagai negara yang dibangun oleh imigran, perdebatan tentang kebijakan imigrasi tetap menjadi isu sentral, termasuk soal reformasi perbatasan dan hak imigran tanpa dokumen.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="economy">
+            <h1>Economic Overview</h1>
+            <p>
+                Ekonomi Amerika Serikat adalah yang terbesar di dunia dengan Produk Domestik Bruto (PDB) mencapai lebih dari $26 triliun pada 2023. Karakteristik utama ekonomi AS meliputi:
+                <ul>
+                    <li><strong>Technology:</strong> AS memimpin dalam inovasi teknologi, dengan perusahaan seperti Apple, Google, dan Microsoft mendominasi pasar global.</li>
+                    <li><strong>Finance:</strong> Wall Street adalah pusat keuangan dunia, dengan pasar saham AS seperti NYSE dan NASDAQ mempengaruhi perekonomian global.</li>
+                    <li><strong>Challenges:</strong> Inflasi, ketimpangan pendapatan, dan utang nasional yang terus meningkat menjadi perhatian utama dalam kebijakan ekonomi.</li>
+                    <li><strong>Trade Relations:</strong> Perdagangan internasional adalah elemen penting, dengan fokus pada hubungan dengan China, Uni Eropa, dan mitra dagang utama lainnya.</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="politics">
+            <h1>Political Landscape</h1>
+            <p>
+                Amerika Serikat memiliki sistem pemerintahan demokrasi berbentuk republik federal, di mana kekuasaan dibagi antara pemerintah pusat dan negara bagian. Beberapa poin utama meliputi:
+                <ul>
+                    <li><strong>Form of Government:</strong> Sistem federal dengan tiga cabang utama: eksekutif, legislatif, dan yudikatif. Konstitusi AS menjadi landasan hukum utama.</li>
+                    <li><strong>Presidency:</strong> Presiden saat ini (2024), Joe Biden, adalah kepala negara dan kepala pemerintahan, didukung oleh kabinetnya.</li>
+                    <li><strong>Political Parties:</strong> Partai Demokrat dan Republik adalah dua partai utama. Perbedaan ideologi antara keduanya sering kali menciptakan polarisasi dalam masyarakat.</li>
+                    <li><strong>Key Issues:</strong> Isu-isu seperti reformasi imigrasi, keamanan nasional, dan perubahan iklim menjadi pusat debat kebijakan di Kongres dan Senat.</li>
+                </ul>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;  2024 Komunitas Politik Geografi Canisius College</p>
+    </footer>
+</body>
+</html>
+
